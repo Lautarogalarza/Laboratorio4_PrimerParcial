@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+<app-cabecera></app-cabecera>
+
+
+  <main role="main">
+    
+    <app-tabla-pelicula [listaPeliculas]='listadoPelis'  
+    (emitPeliculaDetalle)='peliculaEventDetalle($event)'
+    (emitPeliculaModificar)='peliculaEventModificar($event)'
+    (emitPeliculaEliminar)='peliculEventEliminar($event)'  
+    ></app-tabla-pelicula>
+
+    <div class="container">
+
+      <div class="controladores">
+
+        <app-detalle-pelicula [peliculaDetalle]='peliculaDetalle' [activoBoton]="true" ></app-detalle-pelicula>
+        <app-modificar-pelicula [peliculaModificar]='peliculaModificar'></app-modificar-pelicula>
+        <app-eliminar-pelicula [peliculaEliminar]='peliculaEliminar'></app-eliminar-pelicula>
+
+      </div>
+
+    </div>
+  </main>
+
+

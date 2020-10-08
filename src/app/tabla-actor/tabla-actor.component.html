@@ -1,0 +1,30 @@
+
+    <div class="row justify-content-center">
+        <div class="col-auto">
+          <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>FECHA</th >
+                  <th>NOMBRE</th>
+                  <th>TIPO</th>
+                  <th>PUBLICO</th>
+                  <th>FOTO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let actor of this.listadoActores">
+                  <td >{{actor.fecha}}</td>
+                  <td>{{actor.nombre}}</td>
+                  <td>{{actor.apellido}}</td>
+                  <td>{{actor.sexo}}</td>
+                  <td> <img class="img-fluid" [src]="actor.foto"></td>
+                  <td [hidden]="activoBoton">  <button class="btn btn-secondary" (click)="EnviarActor(actor)" >Añadir</button>  </td>
+                </tr>
+              </tbody>
+
+          </table>
+        </div>
+      </div>
+
+
+

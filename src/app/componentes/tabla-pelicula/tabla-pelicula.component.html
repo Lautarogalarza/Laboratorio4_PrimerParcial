@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <div class="container grid" >
+    
+    <div class="card mb-4 shadow-sm" *ngFor="let pelicula of this.listaPeliculas">
+          <p class="text-center" >{{pelicula.nombre}}</p>
+          <img class="img-fluid" [src]="pelicula.foto">
+          <div class="col-md-14 text-center">
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaDetalle(pelicula)">Detalle</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaModificar(pelicula)">Modificar</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaEliminar(pelicula)">Eliminar</button>
+          </div>
+                
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--<table class="table">
+        <thead>
+          <tr>
+            <th>FECHA</th >
+            <th>NOMBRE</th>
+            <th>TIPO</th>
+            <th>PUBLICO</th>
+            <th>FOTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pelicula of this.listaPeliculas">
+            <td>{{pelicula.fecha}} </td>
+            <td>{{pelicula.nombre}}</td>
+            <td>{{pelicula.tipo}}</td>
+            <td>{{pelicula.cantPublico}}</td>
+            <td> <img class="foto" [src]="pelicula.foto">
+              <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-light">Detalle</button>
+                <button type="button" class="btn btn-light">Modificar</button>
+                <button type="button" class="btn btn-light">Eliminar</button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>-->

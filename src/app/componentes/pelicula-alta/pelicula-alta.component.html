@@ -1,0 +1,60 @@
+<app-cabecera></app-cabecera>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+            <h1>ALTA PELICULAS</h1>
+         
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">NOMBRE</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevaPelicula.nombre" >
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">FECHA</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="fechaAux">
+
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">TIPO</span>
+                    </div>
+                    <select id="miselect" class="form-control" (change)="cambio($event)">
+                        <option disabled selected hidden>Seleccione un usuario </option>
+                        <option [value]="item" *ngFor="let item of tipos">{{item}}</option>
+
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">PUBLICO</span>
+                    </div>
+                    <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevaPelicula.cantidadPublico">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">FOTO</span>
+                    </div>
+                    <input type="file" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevaPelicula.foto">
+                </div>
+
+                <button class="btn btn-secondary" type="submit" (click)="Cargar()">CARGAR</button>
+
+                <div class="col-mb-4">
+                    <app-tabla-actor [listadoActores]="listadoActores"  [activoBoton]="false"  (emitActorDetalle)='actorEventDetalle($event)' ></app-tabla-actor>
+                </div>
+        
+        </div>
+    </div>
+</div>

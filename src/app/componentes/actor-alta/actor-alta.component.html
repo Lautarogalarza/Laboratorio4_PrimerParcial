@@ -1,0 +1,52 @@
+<app-cabecera></app-cabecera>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+            <h1>ALTA ACTOR</h1>
+         
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">NOMBRE</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevoActor.nombre" >
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">APELLIDO</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevoActor.apellido" >
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">FECHA</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="fechaAux">
+
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">SEXO</span>
+                    </div>
+                    <select id="miselect" class="form-control" (change)="cambio($event)">
+                        <option disabled selected hidden>Seleccione un sexo </option>
+                        <option [value]="item" *ngFor="let item of tipos">{{item}}</option>
+
+                    </select>
+                </div>
+                <button class="btn btn-secondary"  (click)="Cargar()">CARGAR</button>
+
+                <div class="col-mb-4">
+                    <app-tabla-paises [listadoPaises]="listaPaises" (emitPais)='PaisEvent($event)'  ></app-tabla-paises>
+                </div>
+        
+        </div>
+    </div>
+</div>

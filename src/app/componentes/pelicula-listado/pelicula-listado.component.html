@@ -1,0 +1,14 @@
+<app-cabecera></app-cabecera>
+    <app-tabla-pelicula [listaPeliculas]='listadoPelis' (emitPeliculaDetalle)='peliculaEventDetalle($event)' ></app-tabla-pelicula>
+
+    <div class="container">
+
+      <div class="controladores">
+          <app-detalle-pelicula [peliculaDetalle]='peliculaDetalle'  [activoBoton]="false"  ></app-detalle-pelicula>
+
+
+      </div>
+
+    </div>
+
+

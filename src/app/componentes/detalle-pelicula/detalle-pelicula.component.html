@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="row " *ngIf="peliculaDetalle">
+    <h2>DETALLE</h2>
+
+  
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">ID</span>
+        </div>
+        <input  type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.id"  disabled >
+      </div>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">NOMBRE</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.nombre" disabled>
+      </div>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">FECHA</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.fecha" disabled>
+        
+      </div>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">TIPO</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.tipo" disabled>
+      </div>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">PUBLICO</span>
+        </div>
+        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.cantidadPublico" disabled>
+      </div>
+      <button class="btn btn-secondary" (click)="limpiar()" >LIMPIAR</button>
+      <button class="btn btn-secondary" [hidden]="activoBoton" (click)="eliminar()" >ELIMINAR</button>
+      
+   
+
+  </div>

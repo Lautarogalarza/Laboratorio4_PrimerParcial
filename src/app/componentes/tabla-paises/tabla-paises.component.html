@@ -1,0 +1,26 @@
+
+    <div class="row justify-content-center">
+        <div class="col-auto">
+          <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>NOMBRE</th >
+                  <th>REGION</th>
+                  <th>BANDERA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pais of this.listadoPaises">
+                  <td >{{pais.name}}</td>
+                  <td>{{pais.region}}</td>
+                  <td> <img class="img-fluid" [src]="pais.flag"></td>
+                  <td [hidden]="activoBoton">  <button class="btn btn-secondary" (click)="EnviarPais(pais)" >Añadir</button>  </td>
+                </tr>
+              </tbody>
+
+          </table>
+        </div>
+      </div>
+
+
+
