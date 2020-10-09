@@ -4,6 +4,13 @@
     <div class="row">
         <div class="col-md-8">
 
+            <div *ngIf="error" class="error">
+                <span> {{error}}</span>
+              </div>
+              <div *ngIf="mensaje" class="mensaje">
+                <span> {{mensaje}}</span>
+              </div>
+
             <h1>ALTA PELICULAS</h1>
          
                 <div class="input-group mb-3">
@@ -41,14 +48,8 @@
                     <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
                         [(ngModel)]="nuevaPelicula.cantidadPublico">
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">FOTO</span>
-                    </div>
-                    <input type="file" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
-                        [(ngModel)]="nuevaPelicula.foto">
-                </div>
-
+        
+   
                 <button class="btn btn-secondary" type="submit" (click)="Cargar()">CARGAR</button>
 
                 <div class="col-mb-4">

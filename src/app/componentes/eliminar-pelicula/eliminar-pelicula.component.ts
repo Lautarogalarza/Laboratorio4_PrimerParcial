@@ -16,7 +16,7 @@ export class EliminarPeliculaComponent implements OnInit {
   eliminar(){
     console.log(this.peliculaEliminar);
     this.peliculaEliminar.estado=false;
-    this.context.list('actoresParcial').update(this.peliculaEliminar.id+this.peliculaEliminar.nombre, { estado:false})
+    this.context.list('actoresParcial').update(this.peliculaEliminar.id.toString(), { estado:false})
   }
   
 

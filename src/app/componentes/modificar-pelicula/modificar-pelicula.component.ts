@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';

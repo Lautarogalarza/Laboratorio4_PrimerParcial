@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pelicula-alta',
   templateUrl: './pelicula-alta.component.html',
@@ -13,16 +14,19 @@ export class PeliculaAltaComponent implements OnInit {
   peliculas: Observable<any[]>;
   listadoPelis = [];
   nuevaPelicula: Pelicula = new Pelicula();
-  nuevoActor: Actor = new Actor();
+  nuevoActor:Actor;
   reparto=[];
   actores: Observable<any[]>;
   listadoActores = [];
   idPelicula;
   fechaAux: Date = new Date;
   permitirUser: boolean;
+  actoresNombres=[];
+  error: any;
+  mensaje:any
 
   tipos = ["amor", "comedia", "terror", "otros"];
-  constructor(private context: AngularFireDatabase,public toastr: ToastrService) {
+  constructor(private context: AngularFireDatabase,public toastr: ToastrService, private route:Router) {
     this.peliculas = this.context.list('peliculas').valueChanges();
     this.peliculas.subscribe(peliculas => {
       this.listadoPelis = peliculas;
@@ -30,7 +34,7 @@ export class PeliculaAltaComponent implements OnInit {
       this.idPelicula = this.listadoPelis.length + 1;
     }, error => console.log(error));
 
-    this.actores = this.context.list('actores').valueChanges();
+    this.actores = this.context.list('actoresParcial').valueChanges();
     this.actores.subscribe(actores => this.listadoActores = actores, error => console.log(error));
 
   }
@@ -50,6 +54,8 @@ export class PeliculaAltaComponent implements OnInit {
         , estado: true
         , id: this.idPelicula
         , actor: this.reparto
+      }).then(()=>{
+        this.route.navigate(['/búsqueda']);
       });
 
 
@@ -57,11 +63,19 @@ export class PeliculaAltaComponent implements OnInit {
 
 
   actorEventDetalle(actor) {
+    this.nuevoActor =actor;
     if (!this.reparto.includes(actor.id)) {
-      this.toastr.success('Actor registrado en el reparto');
+      this.mensaje='Actor registrado en el reparto';
+      setTimeout(() => {
+        this.mensaje=null;
+      }, 1000);
       this.reparto.push(actor.id);
+      this.actoresNombres.push(this.nuevoActor.nombre);
     } else {
-      this.toastr.error('Actor ya seleccionado');
+      this.error='Actor ya seleccionado';
+      setTimeout(() => {
+        this.error=null;
+      }, 1000);
     }
   }
 

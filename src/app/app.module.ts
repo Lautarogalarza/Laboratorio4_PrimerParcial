@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { PaisesListadoComponent } from './componentes/paises-listado/paises-listado.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     CabeceraComponent,
     TablaActorComponent,
     TablaPaisesComponent,
-    PaisesListadoComponent
+    PaisesListadoComponent,
+    ActorPeliculaComponent
   ],
   imports: [
     BrowserModule,
