@@ -1,54 +1,59 @@
-
 <div class="container">
   <div class="row " *ngIf="peliculaModificar">
     <h2>MODIFICAR</h2>
 
-  
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">ID</span>
-        </div>
-        <input  type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.id" disabled  >
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">ID</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">NOMBRE</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.nombre" >
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">FECHA</span>
-        </div>
-        <input type="string" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.fecha" >
-        
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">TIPO</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.tipo" >
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">PUBLICO</span>
-        </div>
-        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.cantPublico" >
-      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.id" disabled>
+    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">FOTO</span>
-        </div>
-        <input type="file" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaModificar.cantPublico" >
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">NOMBRE</span>
       </div>
-      <button class="btn btn-secondary"  >LIMPIAR</button>
-      
-   
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.nombre" >
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">APELLIDO</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.apellido" >
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">FECHA</span>
+      </div>
+      <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.fechaNacimiento" >
+
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">SEXO</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.sexo" >
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">REGION</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaModificar.nacionalidad" >
+    </div>
+
+
+    <button class="btn btn-secondary" (click)="ModificarPelicula()"  >MODIFICAR</button>
+
+
 
   </div>

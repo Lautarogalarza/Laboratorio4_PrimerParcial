@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { Actor } from 'src/app/clases/actor';
 import {Pelicula} from '../../clases/pelicula'
 
 @Component({
@@ -10,11 +11,11 @@ import {Pelicula} from '../../clases/pelicula'
 })
 export class BusquedaComponent implements OnInit {
 
-  peliculas: Observable<any[]>;
-  listadoPelis=[];
-  peliculaDetalle:Pelicula;
-  peliculaModificar:Pelicula;
-  peliculaEliminar:Pelicula;
+ actores: Observable<any[]>;
+  listadoActores = [];
+  actorDetalle:Actor;
+  actorModificar:Actor;
+  actorEliminar:Actor;
 
   constructor(private context: AngularFireDatabase) {
     
@@ -22,25 +23,28 @@ export class BusquedaComponent implements OnInit {
 
 
   
-  peliculaEventDetalle(pelicula:Pelicula){
-    this.peliculaDetalle=pelicula;
+  actorEventDetalle(pelicula:Actor){
+    this.actorDetalle=pelicula;
   }
 
-  peliculaEventModificar(pelicula:Pelicula){
-    this.peliculaModificar=pelicula;
+  actorEventModificar(pelicula:Actor){
+    this.actorModificar=pelicula;
   }
 
-  peliculEventEliminar(pelicula:Pelicula){
-    this.peliculaEliminar=pelicula;
+  actorEventEliminar(pelicula:Actor){
+  
+    this.actorEliminar=pelicula;
   }
   
   ngOnInit(): void {
-    this.peliculas = this.context.list('peliculas').valueChanges();
-    this.peliculas.subscribe(peliculas => {
-      this.listadoPelis = peliculas;
-      this.listadoPelis=this.listadoPelis.filter(p=> p.estado ==true);
-      console.log(this.listadoPelis);
+ 
+
+    this.actores = this.context.list('actoresParcial').valueChanges();
+    this.actores.subscribe(actores => {
+      this.listadoActores = actores;
+      this.listadoActores=this.listadoActores.filter(p=> p.estado ==true);
     }, error => console.log(error));
+
  
   }
 }

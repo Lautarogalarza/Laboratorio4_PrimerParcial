@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';
 
 @Component({
@@ -11,25 +12,48 @@ import { Pelicula } from 'src/app/clases/pelicula';
 export class ModificarPeliculaComponent implements OnInit {
   @Input() peliculaModificar;
   peliculas: Observable<any[]>;
-  listadoPelis:Pelicula[]=[];
-  constructor(private context: AngularFirestore) { }
+  listadoPelis: Pelicula[] = [];
+  fechaAux: Date = new Date;
+
+
+
+  constructor(private context: AngularFireDatabase) { }
 
   ngOnInit(): void {
-    this.peliculas = this.context.collection('peliculas').valueChanges();
+    this.peliculas = this.context.list('actoresParcial').valueChanges();
     this.peliculas.subscribe(peliculas => this.listadoPelis = peliculas, error => console.log(error));
 
   }
 
-  
 
-  ModificarPelicula(){
+  getFecha(): string {
+    let fecha = new Date(this.fechaAux);
+    let d, m, y;
+    d = fecha.getDate() + 1;
+    m = fecha.getUTCMonth() + 1;
+    y = fecha.getFullYear();
+    return d + "-" + m + "-" + y;
+  }
 
-    this.context.collection('peliculas').doc(this.peliculaModificar.id).update({
+
+
+
+  ModificarPelicula() {
+
+    let id = this.peliculaModificar.id.toString();
+
+    this.context.list('actoresParcial').update(id, {
       nombre: this.peliculaModificar.nombre,
-      tipo: this.peliculaModificar.data.tipo,
-      cantidadDePublico: this.peliculaModificar.data.cantPublico,
-      //fotoDeLaPelicula: this.peliculaModificar.data.foto,
-      fechaDeEstreno: this.peliculaModificar.data.fecha,
+      apellido: this.peliculaModificar.apellido,
+      sexo: this.peliculaModificar.sexo,
+      nacionalidad: this.peliculaModificar.nacionalidad,
+      estado: this.peliculaModificar.estado,
+      fecha: this.peliculaModificar.fecha,
+      id: this.peliculaModificar.id,
+      foto: this.peliculaModificar.foto,
+
+    }).then(() => {
+
     });
 
 

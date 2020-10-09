@@ -1,13 +1,13 @@
 <div class="jumbotron">
   <div class="container grid" >
     
-    <div class="card mb-4 shadow-sm" *ngFor="let pelicula of this.listaPeliculas">
-          <p class="text-center" >{{pelicula.nombre}}</p>
-          <img class="img-fluid" [src]="pelicula.foto">
+    <div class="card mb-4 shadow-sm" *ngFor="let actor of this.listaPeliculas">
+          <p class="text-center" >{{actor.nombre}} - {{actor.apellido}} </p>
+          <img class="img-fluid" [src]="actor.foto">
           <div class="col-md-14 text-center">
-            <button type="button" class="btn btn-light" (click)="EnviarPeliculaDetalle(pelicula)">Detalle</button>
-            <button type="button" class="btn btn-light" (click)="EnviarPeliculaModificar(pelicula)">Modificar</button>
-            <button type="button" class="btn btn-light" (click)="EnviarPeliculaEliminar(pelicula)">Eliminar</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaDetalle(actor)">Detalle</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaModificar(actor)">Modificar</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaEliminar(actor)">Eliminar</button>
           </div>
                 
     </div>

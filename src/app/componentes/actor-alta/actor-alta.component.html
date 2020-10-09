@@ -41,6 +41,15 @@
 
                     </select>
                 </div>
+
+                <div class="input-group mb-3" *ngIf="nuevoPais">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">NACIONALIDAD</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                        [(ngModel)]="nuevoPais.name"  disabled>
+                </div>
+
                 <button class="btn btn-secondary"  (click)="Cargar()">CARGAR</button>
 
                 <div class="col-mb-4">

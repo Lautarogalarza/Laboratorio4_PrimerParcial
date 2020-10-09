@@ -18,6 +18,13 @@
         </div>
         <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.nombre" disabled>
       </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">APELLIDO</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.apellido" disabled>
+      </div>
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -29,20 +36,17 @@
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">TIPO</span>
+          <span class="input-group-text" id="basic-addon1">SEXO</span>
         </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.tipo" disabled>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.sexo" disabled>
       </div>
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">PUBLICO</span>
+          <span class="input-group-text" id="basic-addon1">REGION</span>
         </div>
-        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.cantidadPublico" disabled>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.nacionalidad" disabled>
       </div>
-      <button class="btn btn-secondary" (click)="limpiar()" >LIMPIAR</button>
-      <button class="btn btn-secondary" [hidden]="activoBoton" (click)="eliminar()" >ELIMINAR</button>
-      
-   
+
 
   </div>

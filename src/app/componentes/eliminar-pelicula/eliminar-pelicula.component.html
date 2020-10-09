@@ -1,47 +1,60 @@
-
 <div class="container">
   <div class="row " *ngIf="peliculaEliminar">
     <h2>ELIMINAR</h2>
 
-  
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">ID</span>
-        </div>
-        <input  type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaEliminar.id"  disabled >
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">ID</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">NOMBRE</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaEliminar.nombre" disabled>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.id" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">NOMBRE</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">FECHA</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaEliminar.fecha" disabled>
-        
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.nombre" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">APELLIDO</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">TIPO</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaEliminar.tipo" disabled>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.apellido" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">FECHA</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">PUBLICO</span>
-        </div>
-        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaEliminar.cantPublico" disabled>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.fecha" disabled>
+
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">SEXO</span>
       </div>
-      <button class="btn btn-secondary" (click)="Eliminar()" >MODIFICAR</button>
-      
-   
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.sexo" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">REGION</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="peliculaEliminar.nacionalidad" disabled>
+    </div>
+
+    <button class="btn btn-secondary" (click)="eliminar()">ELIMINAR</button>
+
+
 
   </div>

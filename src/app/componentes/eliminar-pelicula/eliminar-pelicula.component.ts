@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-eliminar-pelicula',
@@ -7,9 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EliminarPeliculaComponent implements OnInit {
   @Input() peliculaEliminar;
-  constructor() { }
+  constructor(private context: AngularFireDatabase) { }
 
   ngOnInit(): void {
   }
+
+  eliminar(){
+    console.log(this.peliculaEliminar);
+    this.peliculaEliminar.estado=false;
+    this.context.list('actoresParcial').update(this.peliculaEliminar.id+this.peliculaEliminar.nombre, { estado:false})
+  }
+  
 
 }

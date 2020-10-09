@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Actor } from 'src/app/clases/actor';
 import { PaisesService } from '../../servicios/paises.service'
@@ -17,7 +18,7 @@ export class ActorAltaComponent implements OnInit {
   fechaAux: Date = new Date;
   tipos = ["masculino", "femenino"];
   idActor:number;
-  constructor(private context: AngularFireDatabase, private paisesService: PaisesService) {
+  constructor(private context: AngularFireDatabase, private paisesService: PaisesService, private route:Router) {
 
 
   }
@@ -44,7 +45,7 @@ export class ActorAltaComponent implements OnInit {
 
   Cargar() {
 
-    this.context.list('actoresParcial').set(this.idActor + this.nuevoActor.nombre,
+    this.context.list('actoresParcial').set(this.idActor.toString(),
       {
         nombre: this.nuevoActor.nombre
         , apellido: this.nuevoActor.apellido
@@ -53,8 +54,11 @@ export class ActorAltaComponent implements OnInit {
         , foto: "https://i.imgur.com/sMa2j5o.png"
         , nacionalidad: this.nuevoPais.name
         , id: this.idActor
+        ,estado:true
+      }).then(()=>{
+        this.route.navigate(['/búsqueda']);
       });
-
+    
 
   }
 
