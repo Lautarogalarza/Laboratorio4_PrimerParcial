@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row " *ngIf="paisDetalle">
+        <h2>PAIS</h2>
+   
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">PAIS</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="paisDetalle[0].name" disabled>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">CAPITAL</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="paisDetalle[0].capital" disabled>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">REGION</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="paisDetalle[0].region" disabled>
+
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">POBLACION</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="paisDetalle[0].population" disabled>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">IDIOMA</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="paisDetalle[0].languages[0].nativeName" disabled>
+        </div>
+
+    </div>
+</div>

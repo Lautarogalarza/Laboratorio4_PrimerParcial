@@ -1,0 +1,26 @@
+
+  <div class="table-wrapper-scroll-y my-custom-scrollbar" [hidden]="activoTabla">
+  
+    <table class="table table-bordered table-striped mb-0">
+      <thead >
+        <tr>
+          <th>FECHA</th>
+          <th>NOMBRE</th>
+          <th>TIPO</th>
+          <th>PUBLICO</th>
+          <th>FOTO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pelicula of this.listaPeliculas">
+          <td>{{pelicula.fecha}} </td>
+          <td>{{pelicula.nombre}}</td>
+          <td>{{pelicula.tipo}}</td>
+          <td>{{pelicula.cantidadPublico}}</td>
+          <td> <img class="img-fluid" [src]="pelicula.foto"></td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+

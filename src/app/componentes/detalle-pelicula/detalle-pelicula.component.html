@@ -1,52 +1,56 @@
-
 <div class="container">
-  <div class="row " *ngIf="peliculaDetalle">
+  <div class="row " *ngIf="actorDetalle">
     <h2>DETALLE</h2>
 
-  
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">ID</span>
-        </div>
-        <input  type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.id"  disabled >
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">ID</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">NOMBRE</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.nombre" disabled>
-      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.id" disabled>
+    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">APELLIDO</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.apellido" disabled>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">NOMBRE</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">FECHA</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.fecha" disabled>
-        
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.nombre" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">APELLIDO</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">SEXO</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.sexo" disabled>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.apellido" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">FECHA</span>
       </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">REGION</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="peliculaDetalle.nacionalidad" disabled>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.fecha" disabled>
+
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">SEXO</span>
       </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.sexo" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">REGION</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+        [(ngModel)]="actorDetalle.nacionalidad" disabled>
+    </div>
 
 
   </div>
+</div>

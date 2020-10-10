@@ -1,0 +1,18 @@
+.img-fluid
+{
+   
+    width: 200px;
+}
+
+.table-wrapper-scroll-y{
+    width: 25vw;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }

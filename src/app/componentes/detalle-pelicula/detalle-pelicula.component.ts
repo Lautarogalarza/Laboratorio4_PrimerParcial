@@ -9,7 +9,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./detalle-pelicula.component.css']
 })
 export class DetallePeliculaComponent implements OnInit {
-  @Input() peliculaDetalle;
+  @Input() actorDetalle;
   @Input() activoBoton:boolean;
   @Output() emitPeliculaDetalle:EventEmitter<any> = new EventEmitter();
   activoModificar:boolean;
@@ -20,16 +20,17 @@ export class DetallePeliculaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.actorDetalle);
   }
 
   eliminar(){
-    this.peliculaDetalle.estado=false;
-    this.context.list('peliculas').update(this.peliculaDetalle.id+this.peliculaDetalle.nombre, { estado:false})
+    this.actorDetalle.estado=false;
+    this.context.list('peliculas').update(this.actorDetalle.id+this.actorDetalle.nombre, { estado:false})
   }
   
 
   limpiar(){
 
-   this.peliculaDetalle=[];
+   this.actorDetalle=[];
   }
 }

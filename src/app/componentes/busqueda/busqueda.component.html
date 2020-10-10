@@ -4,7 +4,7 @@
 
   <main role="main">
     
-    <app-tabla-pelicula [listaPeliculas]='listadoActores'  
+    <app-tabla-pelicula [parte2]='true' [listaPeliculas]='listadoActores'  
     (emitPeliculaDetalle)='actorEventDetalle($event)'
     (emitPeliculaModificar)='actorEventModificar($event)'
     (emitPeliculaEliminar)='actorEventEliminar($event)'  
@@ -14,7 +14,7 @@
 
       <div class="controladores">
 
-        <app-detalle-pelicula [peliculaDetalle]='actorDetalle' ></app-detalle-pelicula>
+        <app-detalle-pelicula [actorDetalle]='actorDetalle' ></app-detalle-pelicula>
         <app-modificar-pelicula [peliculaModificar]='actorModificar'></app-modificar-pelicula>
         <app-eliminar-pelicula [peliculaEliminar]='actorEliminar'></app-eliminar-pelicula>
 

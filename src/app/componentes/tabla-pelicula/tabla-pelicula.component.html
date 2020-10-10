@@ -4,10 +4,15 @@
     <div class="card mb-4 shadow-sm" *ngFor="let actor of this.listaPeliculas">
           <p class="text-center" >{{actor.nombre}} - {{actor.apellido}} </p>
           <img class="img-fluid" [src]="actor.foto">
-          <div class="col-md-14 text-center">
+          <div class="col-md-14 text-center" *ngIf="parte2">
             <button type="button" class="btn btn-light" (click)="EnviarPeliculaDetalle(actor)">Detalle</button>
             <button type="button" class="btn btn-light" (click)="EnviarPeliculaModificar(actor)">Modificar</button>
             <button type="button" class="btn btn-light" (click)="EnviarPeliculaEliminar(actor)">Eliminar</button>
+          </div>
+          <div class="col-md-14 text-center" *ngIf="parte3">
+            <button type="button" class="btn btn-light" (click)="EnviarActorPelicula(actor)">Pelicula</button>
+            <button type="button" class="btn btn-light" (click)="EnviarActorPais(actor)">Pais</button>
+            <button type="button" class="btn btn-light" (click)="EnviarPeliculaDetalle(actor)">Detalle</button>
           </div>
                 
     </div>

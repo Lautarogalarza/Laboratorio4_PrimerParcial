@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { Actor } from 'src/app/clases/actor';
@@ -18,25 +19,13 @@ export class ModificarPeliculaComponent implements OnInit {
 
 
 
-  constructor(private context: AngularFireDatabase) { }
+  constructor(private context: AngularFireDatabase, private route:Router) { }
 
   ngOnInit(): void {
     this.peliculas = this.context.list('actoresParcial').valueChanges();
     this.peliculas.subscribe(peliculas => this.listadoPelis = peliculas, error => console.log(error));
 
   }
-
-
-  getFecha(): string {
-    let fecha = new Date(this.fechaAux);
-    let d, m, y;
-    d = fecha.getDate() + 1;
-    m = fecha.getUTCMonth() + 1;
-    y = fecha.getFullYear();
-    return d + "-" + m + "-" + y;
-  }
-
-
 
 
   ModificarPelicula() {
@@ -49,12 +38,12 @@ export class ModificarPeliculaComponent implements OnInit {
       sexo: this.peliculaModificar.sexo,
       nacionalidad: this.peliculaModificar.nacionalidad,
       estado: this.peliculaModificar.estado,
-      fecha: this.peliculaModificar.fecha,
+      fecha:this.peliculaModificar.fecha,
       id: this.peliculaModificar.id,
       foto: this.peliculaModificar.foto,
 
     }).then(() => {
-
+       this.route.navigate[('/búsqueda')];
     });
 
 

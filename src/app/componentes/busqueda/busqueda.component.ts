@@ -35,6 +35,9 @@ export class BusquedaComponent implements OnInit {
   
     this.actorEliminar=pelicula;
   }
+
+
+
   
   ngOnInit(): void {
  

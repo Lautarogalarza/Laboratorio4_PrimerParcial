@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { Actor } from 'src/app/clases/actor';
+import { Pelicula } from 'src/app/clases/pelicula';
 
 @Component({
   selector: 'app-actor-pelicula',
@@ -6,10 +10,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actor-pelicula.component.css']
 })
 export class ActorPeliculaComponent implements OnInit {
-
-  constructor() { }
+  actores: Observable<any[]>;
+  listadoActores = [];
+  listadoPeliculas=[];
+  actorPelicula: Actor;
+  actorDetalle: Actor;
+  actorPais: Actor;
+  pais: any;
+  peliculaDetalle: Pelicula;
+  constructor(private context: AngularFireDatabase) { }
 
   ngOnInit(): void {
+
+    this.actores = this.context.list('actoresParcial').valueChanges();
+    this.actores.subscribe(actores => {
+      this.listadoActores = actores;
+      this.listadoActores = this.listadoActores.filter(p => p.estado == true);
+    }, error => console.log(error));
+
   }
+
+
+  actorEventPelicula(peliculas) {
+    this.listadoPeliculas = peliculas;
+  }
+
+  actorEventPais(actor: Actor) {
+    this.actorPais = actor;
+  }
+
+  actorEventDetalle(actor: Actor) {
+    this.actorDetalle = actor;
+  }
+
 
 }
