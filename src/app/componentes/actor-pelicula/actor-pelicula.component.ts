@@ -18,6 +18,7 @@ export class ActorPeliculaComponent implements OnInit {
   actorPais: Actor;
   pais: any;
   peliculaDetalle: Pelicula;
+  activo:boolean=true;
   constructor(private context: AngularFireDatabase) { }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class ActorPeliculaComponent implements OnInit {
 
   actorEventPelicula(peliculas) {
     this.listadoPeliculas = peliculas;
+    this.activo=false;
   }
 
   actorEventPais(actor: Actor) {

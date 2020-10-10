@@ -16,7 +16,9 @@
 
      <app-detalle-pelicula [actorDetalle]='actorDetalle' ></app-detalle-pelicula>
      <app-detalle-pais [paisDetalle]='actorPais' ></app-detalle-pais>
-     <app-detalle-pelicula-actor [listaPeliculas]="listadoPeliculas"  ></app-detalle-pelicula-actor>
+     <div class="tabla" [hidden]="activo">
+       <app-detalle-pelicula-actor [listaPeliculas]="listadoPeliculas"  ></app-detalle-pelicula-actor>
+     </div>
 
       </div>
 
