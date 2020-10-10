@@ -35,7 +35,11 @@ export class PeliculaAltaComponent implements OnInit {
     }, error => console.log(error));
 
     this.actores = this.context.list('actoresParcial').valueChanges();
-    this.actores.subscribe(actores => this.listadoActores = actores, error => console.log(error));
+    this.actores.subscribe(actores => {
+      this.listadoActores = actores;
+      this.listadoActores=this.listadoActores.filter(p=> p.estado ==true);
+    }, error => console.log(error));
+
 
   }
 
