@@ -79,25 +79,50 @@ export class TablaPeliculaComponent implements OnInit {
   }
 
 
+
   EnviarActorPelicula(actor) {
+
+    let listaFiltrada = [];
+
+    this.listadoPelis.forEach(p => {
+
+      setTimeout(() => {
+
+        p.actor.forEach(element => {
+          if (element == actor.id) {
+
+            listaFiltrada.push(p);
+          }
+        })
+      }, 100);
+
+    });
+
+    this.emitActorPelicula.emit(listaFiltrada);
+  }
+
+
+
+  /*EnviarActorPelicula(actor) {
 
     let listaFiltrada=[];
 
      this.listadoPelis.filter(function (p) {
 
-      p.actor.forEach(element => {
-        if (element == actor.id) {
+      setTimeout(() => {
+        
+        p.actor.forEach(element => {
+          if (element == actor.id) {
+  
+             listaFiltrada.push(p);
+          }
+        })
+      }, 100);
 
-           listaFiltrada.push(p);
-        }
-      })
-    }
-
-
-    );
+    });
 
     this.emitActorPelicula.emit(listaFiltrada);
-  }
+  }*/
 
   EnviarActorPais(actor) {
     let paisActor = this.listaPaises.filter(p => p.name == actor.nacionalidad);
