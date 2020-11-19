@@ -20,7 +20,7 @@ import { EliminarPeliculaComponent } from './componentes/eliminar-pelicula/elimi
 import { AngularFireModule } from '@angular/fire';
 import { FormsModule } from '@angular/forms';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
-import { TablaActorComponent } from './tabla-actor/tabla-actor.component';
+import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';

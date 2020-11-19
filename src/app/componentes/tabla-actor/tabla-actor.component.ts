@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Actor } from '../clases/actor';
+import { Actor } from './../../clases/actor';
 
 @Component({
   selector: 'app-tabla-actor',
-  templateUrl: './tabla-actor.component.html',
-  styleUrls: ['./tabla-actor.component.css']
+  templateUrl: '../tabla-actor/tabla-actor.component.html',
+  styleUrls: ['../tabla-actor/tabla-actor.component.css']
 })
 export class TablaActorComponent implements OnInit {
   @Input() listadoActores=[];

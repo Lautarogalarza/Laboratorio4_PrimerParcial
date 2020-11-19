@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
@@ -8,6 +8,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class EliminarPeliculaComponent implements OnInit {
   @Input() peliculaEliminar;
+ // @Output() emitExisteUsuario:EventEmitter<any> = new EventEmitter();
   constructor(private context: AngularFireDatabase) { }
 
   ngOnInit(): void {
@@ -15,8 +16,9 @@ export class EliminarPeliculaComponent implements OnInit {
 
   eliminar(){
     console.log(this.peliculaEliminar);
-    this.peliculaEliminar.estado=false;
-    this.context.list('actoresParcial').update(this.peliculaEliminar.id.toString(), { estado:false})
+  //  this.emitExisteUsuario.emit(false);
+  this.peliculaEliminar.estado=false;
+  this.context.list('actoresParcial').update(this.peliculaEliminar.id.toString(), { estado:false})
   }
   
 
