@@ -43,6 +43,7 @@ export class ModificarPeliculaComponent implements OnInit {
       foto: this.peliculaModificar.foto,
 
     }).then(() => {
+      this.peliculaModificar= null;
        this.route.navigate[('/búsqueda')];
     });
 
