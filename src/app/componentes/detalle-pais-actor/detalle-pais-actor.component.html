@@ -1,0 +1,26 @@
+
+  <div class="table-wrapper-scroll-y my-custom-scrollbar" >
+  
+    <table class="table table-bordered table-striped mb-0">
+      <thead >
+        <tr>
+          <th>FECHA</th >
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>SEXO</th>
+            <th>FOTO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of this.listaActores">
+          <td>{{actor.fecha}} </td>
+          <td>{{actor.nombre}}</td>
+          <td>{{actor.apellido}}</td>
+          <td>{{actor.sexo}}</td>
+          <td> <img class="img-fluid" [src]="actor.foto"></td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+

@@ -5,6 +5,7 @@ import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { PaisesService } from '../../servicios/paises.service'
 @Component({
   selector: 'app-pelicula-alta',
   templateUrl: './pelicula-alta.component.html',
@@ -23,10 +24,12 @@ export class PeliculaAltaComponent implements OnInit {
   permitirUser: boolean;
   actoresNombres=[];
   error: any;
+  listaPaises = [];
+  nuevoPais: any;
   mensaje:any
 
   tipos = ["amor", "comedia", "terror", "otros"];
-  constructor(private context: AngularFireDatabase,public toastr: ToastrService, private route:Router) {
+  constructor(private paisesService:PaisesService,private context: AngularFireDatabase,public toastr: ToastrService, private route:Router) {
     this.peliculas = this.context.list('peliculas').valueChanges();
     this.peliculas.subscribe(peliculas => {
       this.listadoPelis = peliculas;
@@ -44,6 +47,14 @@ export class PeliculaAltaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.paisesService.getUsers().subscribe((listado: any) => {
+  
+      console.log('console log dentro del observable');
+      this.listaPaises = listado;
+    }, error => {
+      console.log('Error');
+    });
+
   }
 
   Cargar() {
@@ -58,6 +69,7 @@ export class PeliculaAltaComponent implements OnInit {
         , estado: true
         , id: this.idPelicula
         , actor: this.reparto
+        , pais: this.nuevoPais.name
       }).then(()=>{
         this.route.navigate(['/búsqueda']);
       });
@@ -121,6 +133,13 @@ export class PeliculaAltaComponent implements OnInit {
       default:
         break;
     }
+
+  }
+
+  PaisEvent(pais) {
+
+    this.nuevoPais = pais;
+
 
   }
 

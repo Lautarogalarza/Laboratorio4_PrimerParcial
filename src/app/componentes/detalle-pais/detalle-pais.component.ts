@@ -12,6 +12,7 @@ export class DetallePaisComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.paisDetalle[0]);
   }
   
   

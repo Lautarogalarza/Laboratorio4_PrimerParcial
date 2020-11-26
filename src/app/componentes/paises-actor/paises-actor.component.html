@@ -1,0 +1,28 @@
+<router-outlet></router-outlet>
+<app-cabecera></app-cabecera>
+
+
+<main role="main">
+
+  <app-tabla-paises-actor [listaPeliculas]='listadoPaises' (emitPaisDetalle)='PaisEventDetalle($event)'
+    (emitPaisActor)='PaisEventActor($event)' (emitPaisPelicula)='PaisEventPelicula($event)'></app-tabla-paises-actor>
+
+  <div class="container">
+
+    <div class="controladores">
+      <div class="tabla"  >
+        <app-detalle-pais [paisDetalle]="pais"></app-detalle-pais>
+      </div>
+   
+
+      <div class="tabla" [hidden]="activo" >
+        <app-detalle-pais-actor [listaActores]="listadoActores"></app-detalle-pais-actor>
+      </div>
+
+      <div class="tabla" [hidden]="activoPelicula">
+        <app-detalle-pais-pelicula [listaPeliculas]="listadoPeliculas"></app-detalle-pais-pelicula>
+      </div>
+
+    </div>
+  </div>
+</main>

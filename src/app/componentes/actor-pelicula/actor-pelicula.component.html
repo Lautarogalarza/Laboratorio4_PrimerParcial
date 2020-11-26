@@ -2,27 +2,24 @@
 <app-cabecera></app-cabecera>
 
 
-  <main role="main">
-    
-    <app-tabla-pelicula [parte3]='true' [listaPeliculas]='listadoActores'  
-    (emitPeliculaDetalle)='actorEventDetalle($event)'
-    (emitActorPais)='actorEventPais($event)'
-    (emitActorPelicula)='actorEventPelicula($event)'  
-    ></app-tabla-pelicula>
+<main role="main">
 
-    <div class="container">
+  <app-tabla-pelicula [parte3]='true' [listaPeliculas]='listadoActores'
+    (emitPeliculaDetalle)='actorEventDetalle($event)' (emitActorPais)='actorEventPais($event)'
+    (emitActorPelicula)='actorEventPelicula($event)'></app-tabla-pelicula>
 
-      <div class="controladores">
+  <div class="container">
 
-     <app-detalle-pelicula [actorDetalle]='actorDetalle' ></app-detalle-pelicula>
-     <app-detalle-pais [paisDetalle]='actorPais' ></app-detalle-pais>
-     <div class="tabla" [hidden]="activo">
-       <app-detalle-pelicula-actor [listaPeliculas]="listadoPeliculas"  ></app-detalle-pelicula-actor>
-     </div>
+    <div class="controladores">
 
+      <app-detalle-pelicula [actorDetalle]='actorDetalle'></app-detalle-pelicula>
+      <app-detalle-pais [paisDetalle]='actorPais'></app-detalle-pais>
+      
+      <div class="tabla" [hidden]="activo">
+        <app-detalle-pelicula-actor [listaPeliculas]="listadoPeliculas"></app-detalle-pelicula-actor>
       </div>
 
     </div>
-  </main>
 
-
+  </div>
+</main>

@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <div class="container grid" >
+      
+      <div class="card mb-4 shadow-sm" *ngFor="let pais of this.listaPeliculas">
+            <p class="text-center" >{{pais.name}} - {{pais.name}} </p>
+            <img class="img-fluid" [src]="pais.flag">
+
+              <button type="button" class="btn btn-light" (click)="EnviarActorPais(pais)">Actores</button>
+              <button type="button" class="btn btn-light" (click)="EnviarPeliculaPais(pais)">Peliculas</button>
+              <button type="button" class="btn btn-light" (click)="EnviarPaisDetalle(pais)">Detalle</button>
+
+                  
+      </div>
+  
+    </div>
+  </div>
+  
+  
