@@ -59,13 +59,15 @@
    
                 <button class="btn btn-secondary" type="submit" (click)="Cargar()">CARGAR</button>
 
-                <div class="col-xs-6">
-                    <app-tabla-actor [listadoActores]="listadoActores"  [activoBoton]="false"  (emitActorDetalle)='actorEventDetalle($event)' ></app-tabla-actor>
-                </div>
-
-                <div class="col-mb-4">
+                
+              
+                <app-tabla-actor [listadoActores]="listadoActores"  [activoBoton]="false"  (emitActorDetalle)='actorEventDetalle($event)' ></app-tabla-actor>        
+               
+                <div class="paises">
                     <app-tabla-paises [listadoPaises]="listaPaises" (emitPais)='PaisEvent($event)' ></app-tabla-paises>
+
                 </div>
+           
         
         </div>
     </div>

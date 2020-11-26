@@ -90,3 +90,9 @@
       opacity: 1;
     }
   }
+
+  .paises{
+    position: relative;
+    left: 100%;
+    top: -36%;
+  }
