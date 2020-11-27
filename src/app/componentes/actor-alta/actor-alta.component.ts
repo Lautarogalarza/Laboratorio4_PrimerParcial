@@ -28,6 +28,8 @@ export class ActorAltaComponent implements OnInit {
     this.actores.subscribe(actores => {
       this.listadoActores = actores;
       this.idActor = this.listadoActores.length + 1;
+      
+  console.log(this.idActor);
     }, error => console.log(error));
 
   
@@ -38,8 +40,6 @@ export class ActorAltaComponent implements OnInit {
     }, error => {
       console.log('Error');
     });
-
-  
   
   }
 
